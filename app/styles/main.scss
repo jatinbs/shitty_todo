@@ -90,3 +90,23 @@ body {
     border-bottom: 0;
   }
 }
+
+
+.tasks-list, .completed-tasks-list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.task {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+.task-title {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.task-completed-container {
+  float: right;
+  text-align: right;
+}

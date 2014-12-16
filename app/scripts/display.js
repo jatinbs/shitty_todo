@@ -1,6 +1,6 @@
 function Display(container) {
 
-  this.container = typeof container !== 'undefined' ? container : jQuery('#task-table');
+  this.container = typeof container !== 'undefined' ? container : jQuery('#tasks-container');
 
   this.add = function(tasklist) {
 
@@ -28,15 +28,15 @@ function Display(container) {
   };
 
   this.getTaskMarkup = function(task, index) {
-    var markup = '<tr class="task-row task">';
-    markup += '<td>';
+    var markup = '<li class="task-row task">';
+    markup += '<label>';
     markup += '<input type="checkbox" class="complete-task" data-task-id="' + index + '" ';
     if( task.completed ) {
       markup +=  'checked';
     }
     markup += '/>';
-    markup += '</td>';
-    markup += '<td>';
+    markup += '</label>';
+    markup += '<span class="task-title">';
     if( task.completed ) {
       markup +=  '<s>';
     }
@@ -44,14 +44,14 @@ function Display(container) {
     if( task.completed ) {
       markup +=  '</s>';
     }
-    markup += '</td>';
-    markup += '<td><a href="#" data-task-id="' + index + '" class="delete-task">&times;</a></td>';
-    markup += '</tr>';
+    markup += '</span>';
+    markup += '<span class="task-completed-container"><a href="#" data-task-id="' + index + '" class="delete-task">&times;</a></span>';
+    markup += '</li>';
     return markup;
   };
 
   this.addMarkup = function(markup) {
-    this.container.append(markup);
+    this.container.find('.tasks-list').append(markup);
   };
 
 };

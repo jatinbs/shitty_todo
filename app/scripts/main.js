@@ -9,7 +9,7 @@ var mainTaskList = oldTasks ? new TaskList(oldTasks['tasks']) : new TaskList([])
 
 jQuery(document).ready(function() {
 
-  mainDisplay = new Display(jQuery('#task-table'))
+  mainDisplay = new Display(jQuery('#tasks-container'));
   mainDisplay.refreshAll(mainTaskList);
 
   //take new task input from user
