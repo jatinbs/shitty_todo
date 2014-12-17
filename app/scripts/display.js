@@ -41,7 +41,7 @@ function Display(container) {
     if( task.completed ) {
       markup +=  '<s>';
     }
-    markup += '<a href="#" class="task-title-editable" data-type="text">';
+    markup += '<a href="#" class="task-title-editable" data-type="text" data-task-id="' + index + '">';
     markup += task.title;
     markup += '</a>';
     if( task.completed ) {

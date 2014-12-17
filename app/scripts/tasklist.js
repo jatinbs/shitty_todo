@@ -20,6 +20,12 @@ function TaskList(tasks) {
     this.sortCompleted();
   };
 
+  this.updateTitle = function(title, index) {
+    if(index in this.tasks) {
+      this.tasks[index].title = title;
+    }
+  };
+
   this.sortCompleted = function() {
     this.tasks.sort(compareTaskCompletion);
   };

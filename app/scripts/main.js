@@ -65,6 +65,10 @@ var addTaskListeners = function() {
     mainStorage.set(mainTaskList);
   });
 
-  jQuery('.task-title-editable').editable();
+  jQuery('.task-title-editable').editable().on('save', function(e, params) {
+    var index = jQuery(this).attr('data-task-id');
+    mainTaskList.updateTitle(params.newValue, index);
+    mainStorage.set(mainTaskList);
+  });
 
 };
