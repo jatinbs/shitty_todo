@@ -5,7 +5,8 @@
 var mainDisplay = null;
 var mainStorage = new Storage('tasks');
 var oldTasks = mainStorage.get();
-var mainTaskList = oldTasks ? new TaskList(oldTasks['tasks']) : new TaskList([]);
+var mainTaskList = oldTasks ? new TaskList(oldTasks.tasks) : new TaskList([]);
+var newTaskTitle = jQuery('#new-task-title');
 
 jQuery(document).ready(function() {
 
@@ -16,14 +17,13 @@ jQuery(document).ready(function() {
   jQuery('#new-task-form').submit(function(e) {
 
     //get title text
-    var taskText = jQuery('#new-task-title').val();
+    var taskText = newTaskTitle.val();
 
     //create a new task. add to tasklist
     if(taskText.length > 0) {
       mainTaskList.add(taskText);
-      console.log(mainTaskList);
       mainDisplay.refreshAll(mainTaskList);
-      jQuery('#new-task-title').val('');
+      newTaskTitle.val('');
       mainStorage.set(mainTaskList);
     }
     e.preventDefault();

@@ -1,3 +1,5 @@
+'use strict';
+
 function Storage(id) {
   this.id = typeof id !== 'undefined' ? id : 'tasks';
 
@@ -9,4 +11,4 @@ function Storage(id) {
     localStorage.setItem(this.id, JSON.stringify(data));
   };
 
-};
+}

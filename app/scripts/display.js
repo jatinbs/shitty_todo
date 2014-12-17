@@ -1,3 +1,5 @@
+'use strict';
+
 function Display(container) {
 
   this.container = typeof container !== 'undefined' ? container : jQuery('#tasks-container');
@@ -17,9 +19,9 @@ function Display(container) {
   this.refreshAll = function(tasklist) {
 
     this.container.find('.task').remove();
-    for(var i in tasklist['tasks']) {
-      if(tasklist['tasks'].hasOwnProperty(i)) {
-        var markup = this.getTaskMarkup(tasklist['tasks'][i], i);
+    for(var i in tasklist.tasks) {
+      if(tasklist.tasks.hasOwnProperty(i)) {
+        var markup = this.getTaskMarkup(tasklist.tasks[i], i);
         this.addMarkup(markup);
       }
     }
@@ -56,4 +58,4 @@ function Display(container) {
     this.container.find('.tasks-list').append(markup);
   };
 
-};
+}
