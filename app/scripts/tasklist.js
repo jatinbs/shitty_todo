@@ -4,7 +4,7 @@ function TaskList(tasks) {
 
   this.add = function(text, due) {
     var task = new Task(text, due);
-    this.tasks.push(task);
+    this.tasks.unshift(task);
   };
 
   this.delete = function(index) {
