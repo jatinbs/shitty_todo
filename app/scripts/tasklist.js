@@ -24,6 +24,16 @@ function TaskList(tasks) {
     this.tasks.sort(compareTaskCompletion);
   };
 
+  this.reIndexFromUI = function(container) {
+    var tempTasksArray = [];
+    var taskList = this;
+    container.find('.task').each(function(i) {
+      tempTasksArray.push(taskList.tasks[jQuery(this).attr('data-task-id')]);
+    });
+    this.tasks = tempTasksArray;
+    this.sortCompleted();
+  }
+
 };
 
 function compareTaskCompletion(a,b) {

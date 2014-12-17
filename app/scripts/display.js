@@ -28,7 +28,7 @@ function Display(container) {
   };
 
   this.getTaskMarkup = function(task, index) {
-    var markup = '<li class="task-row task">';
+    var markup = '<li class="task-row task" data-task-id="' + index + '">';
     markup += '<label>';
     markup += '<input type="checkbox" class="complete-task" data-task-id="' + index + '" ';
     if( task.completed ) {
