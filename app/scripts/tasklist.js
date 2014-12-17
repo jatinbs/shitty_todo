@@ -47,7 +47,7 @@ function TaskList(tasks) {
         this.tasks[index].completed = false;
         new PNotify({
           title: 'What?',
-          text: 'You did it wrng the first time? What a loser!',
+          text: 'You did it wrong the first time? What a loser!',
           type: 'success'
         })
       }

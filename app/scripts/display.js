@@ -29,7 +29,7 @@ function Display(container) {
   this.getTaskMarkup = function(task, index) {
     var markup = '<li class="task-row task" data-task-id="' + index + '">';
     markup += '<span class="handle"></span>';
-    markup += '<label>';
+    markup += '<label class="complete-task-label">';
     markup += '<input type="checkbox" class="complete-task" data-task-id="' + index + '" ';
     if( task.completed ) {
       markup +=  'checked';
