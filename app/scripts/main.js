@@ -49,7 +49,9 @@ var addTaskListeners = function() {
     console.log(mainTaskList);
   });
 
-  jQuery('.tasks-list').sortable().bind('sortupdate', function() {
+  jQuery('.tasks-list').sortable({
+    handle: '.handle'
+  }).bind('sortupdate', function() {
     mainTaskList.reIndexFromUI(jQuery('#tasks-container'));
     mainDisplay.refreshAll(mainTaskList);
     mainStorage.set(mainTaskList);
