@@ -65,4 +65,6 @@ var addTaskListeners = function() {
     mainStorage.set(mainTaskList);
   });
 
+  jQuery('.task-title-editable').editable();
+
 };
