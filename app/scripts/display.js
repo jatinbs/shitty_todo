@@ -24,7 +24,6 @@ function Display(container) {
       }
     }
     addTaskListeners();
-
   };
 
   this.getTaskMarkup = function(task, index) {

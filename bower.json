@@ -6,6 +6,7 @@
     "modernizr": "~2.8.2",
     "html5sortable": "*",
     "jquery-icheck": "~1.0.2",
-    "x-editable": "~1.5.1"
+    "x-editable": "~1.5.1",
+    "pnotify": "~2.0.1"
   }
 }
