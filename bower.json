@@ -4,6 +4,7 @@
   "dependencies": {
     "bootstrap-sass-official": "~3.2.0",
     "modernizr": "~2.8.2",
-    "html5sortable": "*"
+    "html5sortable": "*",
+    "jquery-icheck": "~1.0.2"
   }
 }

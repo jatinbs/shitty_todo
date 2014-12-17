@@ -46,13 +46,21 @@ var addTaskListeners = function() {
     mainTaskList.toggleComplete(taskIndex);
     mainDisplay.refreshAll(mainTaskList);
     mainStorage.set(mainTaskList);
-    console.log(mainTaskList);
   });
 
   jQuery('.tasks-list').sortable({
     handle: '.handle'
   }).bind('sortupdate', function() {
     mainTaskList.reIndexFromUI(jQuery('#tasks-container'));
+    mainDisplay.refreshAll(mainTaskList);
+    mainStorage.set(mainTaskList);
+  });
+
+  jQuery('input').iCheck({
+      checkboxClass: 'icheckbox_minimal-grey'
+  }).on('ifToggled', function(e) {
+    var taskIndex = jQuery(this).attr('data-task-id');
+    mainTaskList.toggleComplete(taskIndex);
     mainDisplay.refreshAll(mainTaskList);
     mainStorage.set(mainTaskList);
   });
