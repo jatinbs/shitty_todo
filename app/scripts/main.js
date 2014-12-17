@@ -41,12 +41,12 @@ var addTaskListeners = function() {
     mainStorage.set(mainTaskList);
   });
 
-  jQuery('.complete-task').change(function(e) {
-    var taskIndex = jQuery(this).attr('data-task-id');
-    mainTaskList.toggleComplete(taskIndex);
-    mainDisplay.refreshAll(mainTaskList);
-    mainStorage.set(mainTaskList);
-  });
+  //jQuery('.complete-task').change(function(e) {
+  //  var taskIndex = jQuery(this).attr('data-task-id');
+  //  mainTaskList.toggleComplete(taskIndex);
+  //  mainDisplay.refreshAll(mainTaskList);
+  //  mainStorage.set(mainTaskList);
+  //});
 
   jQuery('.tasks-list').sortable({
     handle: '.handle'
